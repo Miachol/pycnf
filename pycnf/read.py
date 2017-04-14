@@ -7,7 +7,7 @@ def load(filename, extra_dict={}, other_config="", **kwargs):
             other_config = other_config, **kwargs)
     return(config_dict)
 
-def get(filename, section = "default", option = "", **kwargs):
+def eval(filename, section = "default", option = "", **kwargs):
     config_dict = load(filename, **kwargs)
     if option == "":
         return(config_dict[section])

@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.3',
+    version='0.0.5',
 
     description='Implements the JSON, INI, YAML and TOML parser for Python setting and writing of configuration file.',
     long_description=long_description,
@@ -93,7 +93,6 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'iseq': ['package_data.dat'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may

@@ -22,7 +22,7 @@ class ConfigFile(object):
         section_content = self.content[section]
         return(section_content.keys())
 
-    def eval(self, section, option):
+    def eval(self, section = "default", option = ""):
         if option == "":
             return(self.content[section])
         else:

@@ -1,6 +1,6 @@
 from utils import *
 from configtype import get_config_type
-
+import read
 
 def dump(config_dict, out_file, write_type = "json", **kwargs):
     fn = open(out_file, "w")
@@ -20,5 +20,5 @@ def dump(config_dict, out_file, write_type = "json", **kwargs):
 
 def convert(filename, out_file, convert_type = "json", **kwargs):
     config_dict = read.load(filename, **kwargs)
-    status = write.dump(config_dict, out_file, convert_type, **kwargs)
+    status = dump(config_dict, out_file, convert_type, **kwargs)
     return(status)
