@@ -37,6 +37,13 @@ class ConfigFile(object):
                 other_config = other_config, **kwargs)
         return(self.filename)
 
+    def merge(self, sections, **kwargs):
+        self.content_merged = read.dict_merge(self.content, sections, **kwargs)
+        if type(self.content_merged) == dict:
+            return(True)
+        else:
+            return(False)
+
     def write(self, out_file = "", write_type = "json", **kwargs):
         if out_file == "":
             out_file = self.filename

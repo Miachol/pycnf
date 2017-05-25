@@ -16,12 +16,17 @@ def eval(filename, section = "default", option = "", **kwargs):
 
 def merge(filename, sections = [], **kwargs):
     config_dict = load(filename, **kwargs)
+    merge_dict = dict_merge(config_dict, sections, **kwargs)
+    return(merge_dict)
+
+def dict_merge(config_dict, sections = [], **kwargs):
     merge_dict = {}
     for section in sections:
-        if(type(config_dict[section]) == dict): 
+        try:
+            dict(config_dict[section])
             merge_dict.update(config_dict[section])
-        else:
-            merge_dict.update({section:config_dict})
+        except:
+            merge_dict.update({section:config_dict[section]})
     return(merge_dict)
 
 def sections(filename, **kwargs):
